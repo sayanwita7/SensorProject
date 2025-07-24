@@ -1,7 +1,10 @@
 from pymongo.mongo_client import MongoClient
 import pandas as pd
 import json
-uri="mongodb+srv://deysayanwita7:vhORAX6UcS6vTkDe@cluster0.iihxnaq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+import os
+from dotenv import load_dotenv
+load_dotenv()
+uri=os.getenv("MONGODB_URI")
 client=MongoClient(uri)
 DATABASE_NAME="SensorFaultDetection"
 COLLECTION_NAME='waferfault'
