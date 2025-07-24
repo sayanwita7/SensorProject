@@ -59,7 +59,7 @@ class DataTransformation:
             dataframe = self.get_data(feature_store_file_path=self.feature_store_file_path)
             X=dataframe.drop(columns = TARGET_COLUMN)
             y=np.where(dataframe[TARGET_COLUMN]==-1,0,1)
-            X_train, X_test, y_train, y_test = train_test_split(X,Y,test_size=0.2)
+            X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.2)
             preprocessor = self.get_data_transformer_objects()
             X_train_scaled = preprocessor.fit_transform(X_train)
             X_test_scaled = preprocessor.transform(X_test)

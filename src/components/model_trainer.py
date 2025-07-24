@@ -58,11 +58,16 @@ class ModelTrainer:
                        x_test: np.array,
                        y_test: np.array):
         try:
+            # model_report: dict = self.evaluate_models (
+            #     x_train = x_train,
+            #     y_train = y_train,
+            #     x_test = x_test,
+            #     y_test = y_test,
+            #     models = self.models
+            # )
             model_report: dict = self.evaluate_models (
-                x_train = x_train,
-                y_train = y_train,
-                x_test = x_test,
-                y_test = y_test,
+                X= x_train,
+                y= y_train,
                 models = self.models
             )
             print(model_report)

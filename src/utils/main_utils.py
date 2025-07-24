@@ -30,6 +30,16 @@ class MainUtils:
             raise CustomException(e, sys) from e
     
     @staticmethod
+    def save_object(file_path: str, obj: object) -> None:
+        logging.info("Entered the save_object method of MainUtils class")
+        try:
+            with open(file_path, "wb") as file_obj:
+                pickle.dump(obj, file_obj)
+            logging.info("Exited the save_object method of MainUtils class")
+        except Exception as e:
+            raise CustomException(e, sys) from e
+
+    @staticmethod
     def load_object(file_path: str) -> object:
         logging.info ("Entered the load_object method of MainUtils class")
         try:
