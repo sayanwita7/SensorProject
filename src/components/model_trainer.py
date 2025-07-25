@@ -58,13 +58,6 @@ class ModelTrainer:
                        x_test: np.array,
                        y_test: np.array):
         try:
-            # model_report: dict = self.evaluate_models (
-            #     x_train = x_train,
-            #     y_train = y_train,
-            #     x_test = x_test,
-            #     y_test = y_test,
-            #     models = self.models
-            # )
             model_report: dict = self.evaluate_models (
                 X= x_train,
                 y= y_train,
@@ -105,9 +98,6 @@ class ModelTrainer:
             )
             logging.info(f"Extracting model config file path")
             model_report: dict = self.evaluate_models(X=x_train, y=y_train, models=self.models)
-            # best_model_score= max(sorted(model_report.values()))
-            # best_model_name = list(model_report.keys())[list(model_report.values()).index(best_model_score)]
-            # best_model = self.models[best_model_name]
             best_model_name, best_model, best_model_score = self.get_best_model( 
                 x_train=x_train, 
                 y_train= y_train,

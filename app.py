@@ -20,9 +20,7 @@ def train_route():
 def upload():
     try:
         if request.method == 'POST':
-            # it is a object of prediction pipeline
             prediction_pipeline = PredictionPipeline(request)
-            #now we are running this run pipeline method
             prediction_file_detail = prediction_pipeline.run_pipeline()
             lg.info("prediction completed. Downloading prediction file.")
             return send_file(prediction_file_detail.prediction_file_path,
